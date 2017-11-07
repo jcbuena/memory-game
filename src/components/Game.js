@@ -2,18 +2,12 @@ import React from 'react';
 
 import Card from './Card'
 
-const generateCards = n => {
-  const cards = [];
-  for (let i = 0; i < n; i++) {
-    cards.push(<Card key={i}/>);
-  }
-  return cards;
-}
 
 const Game = props => {
+  let k = 0;
   return (
     <div className="game">
-      {generateCards(36)}
+      {props.cards.map(c => <Card color={c} key={k++} />)}
     </div>
   );
 }

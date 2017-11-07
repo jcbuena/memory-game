@@ -4,22 +4,22 @@ import './App.css';
 import Header from './components/Header'
 import Game from './components/Game'
 
-import { generateColors } from './helpers'
+import { generateCards } from './helpers'
 
-const NUM_CARDS = 32;
+const NUM_CARDS = 36;
 
 class App extends Component {
 
-  // state = {
-  //   score: 0,
-  //   cards: generateColors(NUM_CARDS / 2)
-  // };
+  state = {
+    score: 0,
+    cards: generateCards(NUM_CARDS)
+  };
 
   render() {
     return (
       <div>
-        <Header score={0} />
-        <Game />
+        <Header score={this.state.score} />
+        <Game cards={this.state.cards}/>
       </div>
     );
   }
