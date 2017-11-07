@@ -17,10 +17,18 @@ class App extends Component {
 
   flipCard = (c, color) => {
     const newCards = this.state.cards;
-    newCards[c] = color;
-    this.setState({
+    if (newCards[c] !== "#000000") {
+      newCards[c] = "#000000";
+      this.setState({
       cards: newCards
-    })
+      })
+    } else {
+      newCards[c] = color;
+      this.setState({
+        cards: newCards
+      })
+    }
+    
      
   };
 
