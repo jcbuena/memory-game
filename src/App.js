@@ -4,22 +4,31 @@ import './App.css';
 import Header from './components/Header'
 import Game from './components/Game'
 
-import { generateCards } from './helpers'
+import { generateCards, generateBlankCards } from './helpers'
 
 const NUM_CARDS = 36;
+const REAL_CARDS = generateCards(NUM_CARDS);
 
 class App extends Component {
-
   state = {
     score: 0,
-    cards: generateCards(NUM_CARDS)
+    cards: generateBlankCards(36)
+  };
+
+  flipCard = (c, color) => {
+    const newCards = this.state.cards;
+    newCards[c] = color;
+    this.setState({
+      cards: newCards
+    })
+     
   };
 
   render() {
     return (
       <div>
         <Header score={this.state.score} />
-        <Game cards={this.state.cards}/>
+        <Game cards={this.state.cards} realCards={REAL_CARDS} flip={this.flipCard}/>
       </div>
     );
   }

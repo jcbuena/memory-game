@@ -7,7 +7,12 @@ const Game = props => {
   let k = 0;
   return (
     <div className="game">
-      {props.cards.map(c => <Card color={c} key={k++} />)}
+      {Object.keys(props.cards).map( c => <Card 
+                                            color={props.cards[c]} 
+                                            num={c} 
+                                            realColor={props.realCards[c]} 
+                                            flip={props.flip}
+                                            key={k++} />)}
     </div>
   );
 }

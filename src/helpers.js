@@ -36,5 +36,13 @@ export function generateCards(n) {
     
 }
 
+export function generateBlankCards(n) {
+    const cards = {};
+    for (let i = 0; i < n; i++) {
+        cards[i] = "#000000"
+    }
+    return cards;
+}
+
 
 
