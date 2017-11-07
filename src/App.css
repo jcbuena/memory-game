@@ -1,9 +1,11 @@
 .game {
   display: flex;
   flex-flow: row wrap;
+  width: 750px;
 }
 
 .card {
+  flex: 1 0 15%;
   margin: 5px;
   width: 100px;
   height: 100px;
