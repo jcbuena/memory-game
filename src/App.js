@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Header from './components/Header'
+import Game from './components/Game'
+
+import { generateColors } from './helpers'
+
+const NUM_CARDS = 32;
+
 class App extends Component {
+
+  // state = {
+  //   score: 0,
+  //   cards: generateColors(NUM_CARDS / 2)
+  // };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Header score={0} />
+        <Game />
       </div>
     );
   }
