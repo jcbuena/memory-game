@@ -1,0 +1,36 @@
+Rules:
+
+Must use ReactJS
+Must have a README file for building and running the app
+Must place in a public github/bitbucket repo that we can access. When complete please send Mike and I the link.
+The cards may be differentiated by colors, numbers, pictures or icons
+The game must be able to:
+Notify the user if they win or lose
+Allow the user to reset at any time
+Randomize the ‘cards’ layout every game
+The game grid must be at least 6x6 cards
+Bonus Points:
+
+o   Multi Player mode
+
+o   Tracking Scores
+
+o   Tracking Best Score
+
+o   Tracking time
+
+o   Adjustable number of cards in the game (difficulty levels)
+
+
+The Rules of the memory game itself:
+a.     The cards should be laid out in a grid
+
+b.     Click to turn over any two cards.
+
+c.      If the two cards match, keep them in a revealed state.
+
+d.     If they don't match, turn them back over.
+
+e.     (If in multiplayer mode) Watch and remember during the other player's turn.
+
+f.      The game is over when all the cards have been matched
