@@ -13,20 +13,22 @@ class App extends Component {
   state = {
     score: 0,
     cards: generateBlankCards(NUM_CARDS),
+    oldCards: generateBlankCards(NUM_CARDS),
     displayedCard: ""
   };
 
   flipCard = (c, color) => {
-      const newCards = {}
+      const newCards = {}, oldCards = {};
       Object.assign(newCards, this.state.cards);
+      Object.assign(oldCards, this.state.cards);
       newCards[c] = color;
-      this.setState({cards: newCards, displayedCard: color})
+      this.setState({cards: newCards})
       if (color === this.state.displayedCard) {
-        this.setState({displayedCard: "", score: this.state.score + 1})
-      } else if (!this.state.displayedCard){
-        this.setState({displayedCard: color});
-      } else {
-        this.setState({displayedCard: "", cards: generateBlankCards(NUM_CARDS)})
+        this.setState({displayedCard: "", score: this.state.score + 1, oldCards: newCards})
+      } else if (!this.state.displayedCard) {
+        this.setState({displayedCard: color})
+      } else if (this.state.displayedCard !== color) {
+        setTimeout(() => this.setState({displayedCard: "", cards: this.state.oldCards}), 1000)
       }
      
       
